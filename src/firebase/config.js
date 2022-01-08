@@ -1,9 +1,8 @@
 // Import the functions you need from the SDKs you need
 import * as firebase from "firebase/app";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
+import 'firebase/storage';
+import 'firebase/firestore';
 
-// Your web app's Firebase configuration
 const firebaseConfig = {
   apiKey: "AIzaSyCpBcchLmUurohLQ3KvEammIrfutb-huuw",
   authDomain: "mini-instagram-35118.firebaseapp.com",
@@ -18,5 +17,6 @@ firebase.initializeApp(firebaseConfig);
 
 const projectStorage = firebase.storage();
 const projectFirestore = firebase.firestore();
+const timestamp = firebase.firestore.FieldValue.serverTimestamp;
 
-export default { projectStorage, projectFirestore};
+export { projectStorage, projectFirestore, timestamp };
